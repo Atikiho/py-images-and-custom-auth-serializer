@@ -47,10 +47,10 @@ class AuthTokenSerializer(serializers.Serializer):
             )
 
             if not user:
-                msg = ("Wrong credentials")
+                msg = "Wrong credentials"
                 raise serializers.ValidationError(msg, code="authorization")
         else:
-            msg = ("Missing email or password")
+            msg = "Missing email or password"
             raise serializers.ValidationError(msg, code="authorization")
 
         attrs["user"] = user
